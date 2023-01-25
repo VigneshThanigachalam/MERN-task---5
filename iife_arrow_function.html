@@ -1,222 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 5</title>
-</head>
-<body>
-    <h1 style="text-align: center;">Anonymous Function</h1>
-    <script>
-//Anonuous function
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task 5</title>
+    </head>
+    <body>
+        <h1 style="text-align: center">Anonymous Function</h1>
+        <script>
+            //Anonuous function
 
-//problem 1
-        let array_one = [1,2,3,4,5,13,301]
-        let odd_result=[];
-        let odd_get = function(arr){
-            for(i of arr){
-                if(i%2!=0){
-                    odd_result.push(i);
+            //problem 1
+            let array_one = [1, 2, 3, 4, 5, 13, 301];
+            let odd_result = [];
+            let odd_get = function (arr) {
+                for (i of arr) {
+                    if (i % 2 != 0) {
+                        odd_result.push(i);
+                    }
                 }
-            }
-            return odd_result;
-        }
-        console.log("1) "+array_one+ " odd one are  "+ odd_get(array_one));
+                return odd_result;
+            };
+            console.log(
+                "1) " + array_one + " odd one are  " + odd_get(array_one)
+            );
 
-        //problem 2
-        let array_string = ["vignesh","sanjay","ram","ravi"];
-        let capital_result =[];
-        let array_string_get = function(arr){
-            for(i of arr){
-                let change = i.charAt(0).toUpperCase()+i.slice(1);
-                capital_result.push(change);
-            }
-            return capital_result;
-        }
-        console.log(array_string_get(array_string));
+            //problem 2
+            let array_string = ["vignesh", "sanjay", "ram", "ravi"];
+            let capital_result = [];
+            let array_string_get = function (arr) {
+                for (i of arr) {
+                    let change = i.charAt(0).toUpperCase() + i.slice(1);
+                    capital_result.push(change);
+                }
+                return capital_result;
+            };
+            console.log(array_string_get(array_string));
 
-        //problem 3
-        let before_sum = [1,2,3,4,5,10,12];
-        let result=0;
-        let after_sum = function(arr){
-            for (i of arr){
-                result= result+i;
-            }
-        }
-        after_sum(before_sum);
-        console.log("Before sum:"+before_sum+" -> "+"After sum:"+result);
+            //problem 3
+            let before_sum = [1, 2, 3, 4, 5, 10, 12];
+            let result = 0;
+            let after_sum = function (arr) {
+                for (i of arr) {
+                    result = result + i;
+                }
+            };
+            after_sum(before_sum);
+            console.log(
+                "Before sum:" + before_sum + " -> " + "After sum:" + result
+            );
 
-        //problem 4
-        let num = [-1,-2,-3,1,2,3,4,5,6,7,8,9,10,11,20];
-let result_prime = [];
-let isPrime= function (num) {
-  if(num < 2) return false;
+            //problem 4
+            let num = [-1, -2, -3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20];
+            let result_prime = [];
+            let isPrime = function (num) {
+                if (num < 2) return false;
 
-  for (let k = 2; k < num; k++){
-    if(num % k == 0){
-      return false;
-    }
-  }
-  return true;
-}
-num.forEach(function (element) {
-  const item = isPrime(element);
-  if (item) {
-    result_prime.push(element);
-  }
+                for (let k = 2; k < num; k++) {
+                    if (num % k == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+            num.forEach(function (element) {
+                const item = isPrime(element);
+                if (item) {
+                    result_prime.push(element);
+                }
+            });
+            console.log("prime numbers are: " + result_prime);
 
-});
-console.log("prime numbers are: "+result_prime);
+            //problem 5
+            let isPalindrome = function (word) {
+                palindromeWord = "";
+                for (var i = word.length - 1; i >= 0; i--) {
+                    palindromeWord += word.charAt(i);
+                }
 
-//problem 5
-let isPalindrome= function(word) {
-  palindromeWord = ''
-  for(var i = word.length - 1; i >= 0; i--) {
-    palindromeWord += word.charAt(i)
-  }
+                return palindromeWord === word;
+            };
+            let arr = ["head", "racecar", "pineapple", "121", "pineenip"];
 
-  return palindromeWord === word
-}
-let arr =  ['head', 'racecar', 'pineapple', '121', 'pineenip']
+            let palindromeArr = [];
 
-let palindromeArr = []
+            arr.forEach((word) => {
+                if (isPalindrome(word)) {
+                    palindromeArr.push(word);
+                }
+            });
 
-arr.forEach(word => {
-  if (isPalindrome(word)) {
-    palindromeArr.push(word)
-  }
-})
+            console.log(palindromeArr);
 
-console.log(palindromeArr)
+            //problem 6
+            var num_y = [1, 2, 6];
+            var num_z = [3, 4];
+            const median_two = function (num1, num2) {
+                let compare = (i, j) => {
+                    return i - j;
+                };
+                let arr = num1.concat(num2).sort(compare);
+                if (arr % 2 == 0) {
+                    return (arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2;
+                } else {
+                    console.log(arr);
+                    return arr[Math.floor(arr.length / 2)];
+                }
+            };
+            console.log(median_two(num_y, num_z));
 
+            // problem 7
+            let remove_duplicates_es6 = function (arr) {
+                let s = new Set(arr);
+                let it = s.values();
+                return Array.from(it);
+            };
+            a = ["Mouse", "Mouse", "Number", "Adam", "Jenny", "Number", "Carl"];
 
-//problem 6
-var num_y=[1,2,6];
-var num_z=[3,4];
-const median_two=function(num1,num2){
-let compare=(i,j)=>{
-  return i-j;
-}
-let arr=num1.concat(num2).sort(compare);
-if(arr%2==0){
-  return(arr[arr.length/2-1]+arr[arr.length/2])/2;
-}
-else{
-console.log(arr)
-  return arr[Math.floor(arr.length/2)];
-}
-}
-console.log(median_two(num_y,num_z))
+            console.log(remove_duplicates_es6(a));
 
+            //problem 8
 
-// problem 7
-let remove_duplicates_es6=function (arr) {
-    let s = new Set(arr);
-    let it = s.values();
-    return Array.from(it);
-}
-a = ["Mouse","Mouse","Number","Adam","Jenny","Number","Carl"];
+            var arr_1 = [1, 2, 3, 4];
+            var rotate = function (arr, k) {
+                var i = 1;
+                while (i <= k) {
+                    let last = arr.pop();
+                    arr.unshift(last);
+                    i++;
+                }
+                return arr;
+            };
 
-console.log(remove_duplicates_es6(a));
+            console.log("Rotate array for n times:" + rotate(arr_1, 2));
 
+            //Arrow functions
 
-//problem 8
+            //problem a
+            var odd_1 = [];
+            odd = (arr) => {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] % 2 != 0) {
+                        odd_1.push(arr[i]);
+                    }
+                }
+                return odd_1;
+            };
+            var numbers = [1, 2, 3, 4, 5];
+            console.log(odd(numbers));
 
-var arr_1=[1,2,3,4]
-var rotate=function (arr,k){
-  var i=1;
-  while(i<=k){
-    let last = arr.pop();
-    arr.unshift(last);
-    i++;
-  }
-    return arr;
-}
+            //problem b
+            let array_string_dup = ["vignesh", "sanjay", "ram", "ravi"];
+            let capital_result_dup = [];
+            array_string_get = (arr) => {
+                for (i of arr) {
+                    let change = i.charAt(0).toUpperCase() + i.slice(1);
+                    capital_result_dup.push(change);
+                }
+                return capital_result;
+            };
+            console.log(array_string_get(array_string_dup));
 
-console.log("Rotate array for n times:"+rotate(arr_1,2));
+            //problem c
+            let before_sum_a = [1, 2, 3, 4, 5, 10, 12];
+            let result_a = 0;
+            let after_sum_a = (arr) => {
+                for (i of arr) {
+                    result_a = result_a + i;
+                }
+            };
+            after_sum_a(before_sum_a);
+            console.log(
+                "Before sum:" + before_sum_a + " -> " + "After sum:" + result_a
+            );
 
-//Arrow functions
+            //problem d
+            let num_a = [-1, -2, -3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20];
+            let result_prime_a = [];
+            let isPrime_a = (num_a) => {
+                if (num_a < 2) return false;
 
-//problem a
-var odd_1=[];
-odd =(arr)=>{
-    for(var i=0;i<arr.length;i++){
-if(arr[i]%2!=0){
-    odd_1.push(arr[i]);
-}
-    }
-    return odd_1
-}
-var numbers=[1,2,3,4,5];
-console.log(odd(numbers));
+                for (let k = 2; k < num_a; k++) {
+                    if (num_a % k == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+            num_a.forEach((element_a) => {
+                const item = isPrime(element_a);
+                if (item) {
+                    result_prime_a.push(element_a);
+                }
+            });
+            console.log("prime numbers are: " + result_prime_a);
 
-//problem b
-let array_string_dup = ["vignesh","sanjay","ram","ravi"];
-        let capital_result_dup =[];
-        array_string_get =(arr)=>{
-            for(i of arr){
-                let change = i.charAt(0).toUpperCase()+i.slice(1);
-                capital_result_dup.push(change);
-            }
-            return capital_result;
-        }
-        console.log(array_string_get(array_string_dup));
+            //problem e
+            let isPalindrome_a = (word) => {
+                palindromeWord_a = "";
+                for (var i = word.length - 1; i >= 0; i--) {
+                    palindromeWord_a += word.charAt(i);
+                }
 
-//problem c
-        let before_sum_a = [1,2,3,4,5,10,12];
-        let result_a=0;
-        let after_sum_a = (arr)=>{
-            for (i of arr){
-                result_a= result_a+i;
-            }
-        }
-        after_sum_a(before_sum_a);
-        console.log("Before sum:"+before_sum_a+" -> "+"After sum:"+result_a);
+                return palindromeWord_a === word;
+            };
+            let arr_a = ["head", "racecar", "pineapple", "121", "pineenip"];
 
-//problem d
-let num_a = [-1,-2,-3,1,2,3,4,5,6,7,8,9,10,11,20];
-let result_prime_a = [];
-let isPrime_a= (num_a) =>{
-  if(num_a < 2) return false;
+            let palindromeArr_a = [];
 
-  for (let k = 2; k < num_a; k++){
-    if(num_a % k == 0){
-      return false;
-    }
-  }
-  return true;
-}
-num_a.forEach((element_a)=>
- {
-  const item = isPrime(element_a);
-  if (item) {
-    result_prime_a.push(element_a);
-  }
+            arr_a.forEach((word) => {
+                if (isPalindrome_a(word)) {
+                    palindromeArr_a.push(word);
+                }
+            });
 
-});
-console.log("prime numbers are: "+result_prime_a);
-
-//problem e
-let isPalindrome_a= (word) =>{
-  palindromeWord_a = ''
-  for(var i = word.length - 1; i >= 0; i--) {
-    palindromeWord_a += word.charAt(i)
-  }
-
-  return palindromeWord_a === word
-}
-let arr_a =  ['head', 'racecar', 'pineapple', '121', 'pineenip']
-
-let palindromeArr_a = []
-
-arr_a.forEach(word => {
-  if (isPalindrome_a(word)) {
-    palindromeArr_a.push(word)
-  }
-})
-
-console.log(palindromeArr_a);
-    </script>
-</body>
+            console.log(palindromeArr_a);
+        </script>
+    </body>
 </html>
